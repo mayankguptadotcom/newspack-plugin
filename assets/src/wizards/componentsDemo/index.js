@@ -22,6 +22,7 @@ import {
 	Checklist,
 	Task,
 	SelectControl,
+	ActionCard,
 } from '../../components';
 import './style.scss';
 
@@ -75,6 +76,10 @@ class ComponentsDemo extends Component {
 				<FormattedHeader
 					headerText={ __( 'Newspack Components' ) }
 					subHeaderText={ __( 'Temporary demo of Newspack components' ) }
+				/>
+				<ActionCard
+					title={ __('Silver Member') }
+					description={ __( '$10 per month' ) }
 				/>
 				<Checklist progressBarText={ __( 'Your setup list' ) }>
 					<Task

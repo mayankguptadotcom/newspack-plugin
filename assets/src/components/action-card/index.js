@@ -21,10 +21,20 @@ class ActionCard extends Component {
 	 * Render.
 	 */
 	render( props ) {
-		const { className, ...otherProps } = this.props;
+		const {
+			className,
+			title,
+			description,
+			...otherProps
+		} = this.props;
 		const classes = murielClassnames( 'muriel-action-card', className );
 		return (
-			<BaseComponent className={ classes } { ...otherProps } />
+			<BaseComponent className={ classes } { ...otherProps }>
+				<div className="checklist__task-primary">
+					<h1>{ title }</h1>
+					<h2>{ description }</h2>
+				</div>
+			</BaseComponent>
 		);
 	}
 }
