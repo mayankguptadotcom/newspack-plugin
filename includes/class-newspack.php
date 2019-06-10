@@ -62,6 +62,7 @@ final class Newspack {
 
 		include_once NEWSPACK_ABSPATH . '/includes/wizards/class-components-demo.php';
 		include_once NEWSPACK_ABSPATH . '/includes/wizards/class-subscriptions-wizard.php';
+		include_once NEWSPACK_ABSPATH . '/includes/wizards/class-newsletter-wizard.php';
 	}
 
 	/**
