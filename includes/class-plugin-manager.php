@@ -51,6 +51,10 @@ class Plugin_Manager {
 				'AuthorURI'   => 'https://github.com/ampproject/amp-wp/graphs/contributors',
 				'Download'    => 'wporg',
 				'EditPath'    => 'admin.php?page=amp-options',
+				'Configurator' => [
+					'filename' => 'class-amp-configuration-manager.php',
+					'class_name' => 'AMP_Configuration_Manager',
+				]
 			],
 			'woocommerce-gateway-stripe'    => [
 				'Name'        => __( 'WooCommerce Stripe Gateway', 'newspack' ),
