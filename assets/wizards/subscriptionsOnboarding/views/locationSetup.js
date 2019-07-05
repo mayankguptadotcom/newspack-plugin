@@ -34,15 +34,21 @@ class LocationSetup extends Component {
 	 * Render.
 	 */
 	render() {
-		const { location, onClickContinue, onClickSkip, countrystateFields, currencyFields } = this.props;
+		const {
+			location,
+			onClickContinue,
+			onClickSkip,
+			countrystateFields,
+			currencyFields,
+		} = this.props;
 		const { countrystate, address1, address2, city, postcode, currency } = location;
-
+		console.log( countrystateFields );
 		return (
-			<div className='newspack-location-setup-screen'>
+			<div className="newspack-location-setup-screen">
 				<SelectControl
 					label={ __( 'Where is your business based?' ) }
 					value={ countrystate }
-					options={ countrystateFields }
+					options={ countrystateFields.length ? countrystateFields : [ {} ] }
 					onChange={ value => this.handleOnChange( 'countrystate', value ) }
 				/>
 				<TextControl
@@ -68,7 +74,7 @@ class LocationSetup extends Component {
 				<SelectControl
 					label={ 'Which currency does your business use?' }
 					value={ currency }
-					options={ currencyFields }
+					options={ currencyFields.length ? currencyFields : [ {} ] }
 					onChange={ value => this.handleOnChange( 'currency', value ) }
 				/>
 			</div>

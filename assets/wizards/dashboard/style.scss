@@ -1,3 +1,5 @@
+@import '../../shared/scss/muriel-component';
+
 .newspack_dashboard__header {
 	h1.muriel-formatted-header__title {
 		font-size: 3em;
@@ -79,10 +81,10 @@
 	}
 
 	.newspack-dashboard-card__completed-icon {
-		fill: $muriel-hot-green-500;
+		fill: $primary_color;
 		position: absolute;
-		top: 40px;
-		right: 80px;
+		top: 20px;
+		right: 20px;
 	}
 
 	&:not( .disabled ):hover {

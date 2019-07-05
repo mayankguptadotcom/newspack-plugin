@@ -8,7 +8,9 @@
 .muriel-wizardScreen__loading {
 	.muriel-wizardScreen {
 		position: relative;
-
+		&.muriel-card__no-background {
+			padding: 1em;
+		}
 		&:after {
 			display: block;
 			content: '';

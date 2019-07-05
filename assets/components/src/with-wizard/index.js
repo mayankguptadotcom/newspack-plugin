@@ -30,7 +30,7 @@ export default function withWizard( WrappedComponent, requiredPlugins ) {
 			this.state = {
 				complete: null,
 				error: null,
-				loading: 0,
+				loading: requiredPlugins ? 1 : 0,
 			};
 			this.wrappedComponentRef = createRef();
 		}
@@ -140,6 +140,7 @@ export default function withWizard( WrappedComponent, requiredPlugins ) {
 			const instance = this.wrappedComponentRef.current;
 			this.setState( { complete }, () => {
 				complete && instance && instance.onWizardReady && instance.onWizardReady();
+				complete && this.doneLoading();
 			} );
 		};
 
@@ -159,7 +160,7 @@ export default function withWizard( WrappedComponent, requiredPlugins ) {
 			this.setState( state => ( {
 				loading: state.loading - 1
 			} ) );
-			
+
 		}
 
 		/**
@@ -196,7 +197,7 @@ export default function withWizard( WrappedComponent, requiredPlugins ) {
 					<Route
 						path="/"
 						render={ routeProps => (
-							<Card noBackground>
+							<Card noBackground className="muriel-wizardScreen">
 								{ complete !== null && (
 									<FormattedHeader
 										headerText={ __( 'Required plugin' ) }
