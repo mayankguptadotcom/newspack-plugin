@@ -175,7 +175,14 @@ class Checklists {
 	 * Register and add the page that the checklists will live on.
 	 */
 	public static function add_page() {
-		add_submenu_page( 'newspack', 'Checklist', 'Checklist', 'manage_options', 'newspack-checklist', 'Newspack\Checklists::render_checklist' );
+		add_submenu_page( 'newspack', 'Checklist', 'Checklist', 'manage_options', 'newspack-checklist' );
+
+		add_submenu_page( 'newspack', 'Site Design', 'Site Design', 'manage_options', null );
+		add_submenu_page( 'newspack', 'Reader Revenue', 'Reader Revenue', 'manage_options', 'newspack-checklist&checklist=reader-revenue' );
+		add_submenu_page( 'newspack', 'Advertising', 'Advertising', 'manage_options', 'newspack-checklist&checklist=advertising' );
+		add_submenu_page( 'newspack', 'SEO', 'SEO', 'manage_options', null );
+		add_submenu_page( 'newspack', 'Engagement', 'Engagement', 'manage_options', 'newspack-checklist&checklist=engagement' );
+		add_submenu_page( 'newspack', 'Syndication', 'Syndication', 'manage_options', null );
 	}
 
 	/**

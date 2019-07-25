@@ -32,6 +32,13 @@ class Google_Analytics_Wizard extends Wizard {
 	protected $capability = 'manage_options';
 
 	/**
+	 * Display a link to this wizard in the Newspack submenu.
+	 *
+	 * @var bool
+	 */
+	protected $hidden = false;
+
+	/**
 	 * Constructor.
 	 */
 	public function __construct() {
@@ -46,7 +53,7 @@ class Google_Analytics_Wizard extends Wizard {
 	 * @return string The wizard name.
 	 */
 	public function get_name() {
-		return esc_html__( 'Google Analytics', 'newspack' );
+		return esc_html__( 'Analytics', 'newspack' );
 	}
 
 	/**
