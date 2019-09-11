@@ -11,13 +11,29 @@ import { __ } from '@wordpress/i18n';
 /**
  * Internal dependencies.
  */
-import { Button, Card, FormattedHeader, Handoff, Grid, SecondaryNavigation, TabbedNavigation } from '../';
+import {
+	Button,
+	Card,
+	FormattedHeader,
+	Handoff,
+	Grid,
+	PluginInstaller,
+	SecondaryNavigation,
+	TabbedNavigation,
+} from '../';
 import { murielClassnames, buttonProps } from '../../../shared/js/';
 import './style.scss';
 
 export default function withWizardScreen( WrappedComponent, config ) {
 	return class extends Component {
+		constructor( props ) {
+			super( props );
+			this.state = {
+				pluginRequirementsMet: false,
+			};
+		}
 		render() {
+			const { pluginRequirementsMet } = this.state;
 			const {
 				className,
 				buttonText,
@@ -31,6 +47,7 @@ export default function withWizardScreen( WrappedComponent, config ) {
 				secondaryNavigation,
 				footer,
 				notice,
+				requiredPlugins,
 				secondaryButtonText,
 				secondaryButtonAction,
 				secondaryButtonStyle,
@@ -40,7 +57,7 @@ export default function withWizardScreen( WrappedComponent, config ) {
 				'muriel-wizardScreen',
 				className,
 				noBackground ? 'muriel-wizardScreen__no-background' : '',
-				hidden ? 'muriel-wizardScreen__hidden' : '',
+				hidden ? 'muriel-wizardScreen__hidden' : ''
 			);
 			const content = (
 				<div className="muriel-wizardScreen__content">
@@ -48,6 +65,27 @@ export default function withWizardScreen( WrappedComponent, config ) {
 				</div>
 			);
 			const retrievedButtonProps = buttonProps( buttonAction );
+			if ( requiredPlugins && ! pluginRequirementsMet ) {
+				return (
+					<Grid>
+						<Card noBackground className="muriel-wizardScreen muriel-wizardScreen__no-background">
+							{ headerText && (
+								<FormattedHeader headerText={ headerText } subHeaderText={ subHeaderText } />
+							) }
+							{ tabbedNavigation && (
+								<Card noBackground>
+									<TabbedNavigation items={ tabbedNavigation } />
+									{ secondaryNavigation && <SecondaryNavigation items={ secondaryNavigation } /> }
+								</Card>
+							) }
+							<PluginInstaller
+								plugins={ requiredPlugins }
+								onStatus={ status => this.setState( { pluginRequirementsMet: status.complete } ) }
+							/>
+						</Card>
+					</Grid>
+				);
+			}
 			return (
 				<Fragment>
 					{ ! hidden && (
