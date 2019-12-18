@@ -23,8 +23,12 @@ class Button extends Component {
 	 * Render.
 	 */
 	render( props ) {
-		const { className, ...otherProps } = this.props;
-		const classes = classnames( 'newspack-button', className );
+		const { className, isRipple, ...otherProps } = this.props;
+		const classes = classnames(
+			'newspack-button',
+			className,
+			isRipple && 'is-ripple',
+		);
 		return <BaseComponent className={ classes } { ...otherProps } />;
 	}
 }

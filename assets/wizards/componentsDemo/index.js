@@ -121,13 +121,15 @@ class ComponentsDemo extends Component {
 								modalBody="Click to go to the AMP dashboard. There will be a notification bar at the top with a link to return to Newspack."
 								plugin="amp"
 								isTertiary
+								isRipple
 							/>
-							<Handoff plugin="jetpack" />
-							<Handoff plugin="google-site-kit" />
-							<Handoff plugin="woocommerce" />
+							<Handoff plugin="jetpack" isRipple />
+							<Handoff plugin="google-site-kit" isRipple />
+							<Handoff plugin="woocommerce" isRipple />
 							<Handoff
 								plugin="wordpress-seo"
 								isPrimary
+								isRipple
 								editLink="/wp-admin/admin.php?page=wpseo_dashboard#top#features"
 							>
 								{ __( 'Specific Yoast Page' ) }

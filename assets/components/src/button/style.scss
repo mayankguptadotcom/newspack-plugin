@@ -179,4 +179,32 @@
 			padding: 0;
 		}
 	}
+
+	&.is-ripple {
+		overflow: hidden;
+		position: relative;
+
+		&:after {
+			background-image: radial-gradient( circle, black 10%, transparent 10.01% );
+			background-position: 50%;
+			background-repeat: no-repeat;
+			content: "";
+			display: block;
+			height: 100%;
+			left: 0;
+			opacity: 0;
+			pointer-events: none;
+			position: absolute;
+			transform: scale( 10 );
+			transition: transform 500ms, opacity 1000ms;
+			top: 0;
+			width: 100%;
+		}
+
+		&:active:after {
+			opacity: 0.2;
+			transform: scale( 0 );
+			transition: 0ms;
+		}
+	}
 }
