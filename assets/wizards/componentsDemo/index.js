@@ -121,15 +121,13 @@ class ComponentsDemo extends Component {
 								modalBody="Click to go to the AMP dashboard. There will be a notification bar at the top with a link to return to Newspack."
 								plugin="amp"
 								isTertiary
-								isRipple
 							/>
-							<Handoff plugin="jetpack" isRipple />
-							<Handoff plugin="google-site-kit" isRipple />
-							<Handoff plugin="woocommerce" isRipple />
+							<Handoff plugin="jetpack" />
+							<Handoff plugin="google-site-kit" />
+							<Handoff plugin="woocommerce" />
 							<Handoff
 								plugin="wordpress-seo"
 								isPrimary
-								isRipple
 								editLink="/wp-admin/admin.php?page=wpseo_dashboard#top#features"
 							>
 								{ __( 'Specific Yoast Page' ) }
@@ -490,11 +488,21 @@ class ComponentsDemo extends Component {
 					<Card className="newspack-components-demo__buttons">
 						<FormattedHeader headerText="Buttons" />
 						<Card noBackground className="newspack-components-demo__buttons">
-							<Button isPrimary>{ __( 'isPrimary' ) }</Button>
-							<Button isDefault>{ __( 'isDefault' ) }</Button>
-							<Button isTertiary>{ __( 'isTertiary' ) }</Button>
-							<Button isLink>{ __( 'isLink' ) }</Button>
-							<Button isLarge>{ __( 'isLarge' ) }</Button>
+							<h2>Standard</h2>
+							<Button isPrimary>isPrimary</Button>
+							<Button isDefault>isDefault</Button>
+							<Button isTertiary>isTertiary</Button>
+							<Button isLink>isLink</Button>
+							<hr />
+							<h2>isLarge</h2>
+							<Button isPrimary isLarge>isPrimary</Button>
+							<Button isDefault isLarge>isDefault</Button>
+							<Button isTertiary isLarge>isTertiary</Button>
+							<hr />
+							<h2>isRipple</h2>
+							<Button isPrimary isRipple>isPrimary</Button>
+							<Button isDefault isRipple>isDefault</Button>
+							<Button isTertiary isRipple>isTertiary</Button>
 						</Card>
 					</Card>
 				</Grid>
