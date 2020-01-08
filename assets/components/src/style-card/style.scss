@@ -105,3 +105,13 @@
     }
   }
 }
+
+.newspack-modal__style-card {
+  .components-modal__header {
+    padding: 0 0 64px;
+  }
+
+  .newspack-card {
+    border: 1px solid $light-gray-200;
+  }
+}
