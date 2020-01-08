@@ -12,7 +12,6 @@ import { __ } from '@wordpress/i18n';
  * Internal dependencies
  */
 import { StyleCard, StyleCardGroup, withWizardScreen } from '../../../../components/src';
-import './style.scss';
 import ScreenshotStyle0 from './images/screenshot-style-0.png';
 import ScreenshotStyle1 from './images/screenshot-style-1.png';
 import ScreenshotStyle2 from './images/screenshot-style-2.png';
