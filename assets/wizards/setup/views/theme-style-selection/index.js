@@ -17,7 +17,7 @@ import ScreenshotStyle0 from './images/screenshot-style-0.png';
 import ScreenshotStyle1 from './images/screenshot-style-1.png';
 import ScreenshotStyle2 from './images/screenshot-style-2.png';
 import ScreenshotStyle3 from './images/screenshot-style-3.png';
-import ScreenshotStyle4 from './images/screenshot-style-4.png';
+import ScreenshotSacha from './images/screenshot-sacha.png';
 import ScreenshotStyle5 from './images/screenshot-style-5.png';
 
 /**
@@ -56,8 +56,8 @@ class ThemeStyleSelection extends Component {
 					onClick={ () => updateThemeStyle( 'style-3' ) }
 				/>
 				<StyleCard
-					cardTitle={ __( 'Style 4', 'newspack-plugin' ) }
-					image={ ScreenshotStyle4 }
+					cardTitle="Sacha"
+					image={ ScreenshotSacha }
 					isActive={ themeStyle === 'style-4' }
 					onClick={ () => updateThemeStyle( 'style-4' ) }
 				/>
